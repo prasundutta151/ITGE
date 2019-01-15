@@ -1,0 +1,148 @@
+\documentclass{article}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage[pdftex]{graphicx}
+% Allow the usage of utf8 characters
+%\usepackage[utf8]{inputenc}
+\def\HI{H~{\sc i}~}
+% Start the document
+\begin{document}
+
+% Create a new 1st level heading
+\section{Main Heading}
+section{NGC~628 Data}
+\label{data}
+\citet{walter08} have observed the HI emission from 34 spiral galaxies
+using B, C and D array configurations of the Very Large Array (VLA) as
+a part of The HI Nearby Galaxy Survey (THINGS). For our analysis, we
+use the interferometric \HI ~data of the galaxy NGC~628 from
+THINGS. NGC~628 is an almost face-on spiral galaxy with an average
+inclination angle of $15^{\circ}$ at a distance of $7.3$ Mpc
+\citep{deblok08}. The \HI~extent of the galaxy is $22.0^{'} \times
+20.0^{'}$. We use the interferometric data with the primary
+calibration from THINGS archive and use the Astronomical Image
+Processing System (AIPS) for further analysis. We model the
+synchrotron continuum of the galaxy using visibilities from the
+channels without \HI~emission and make a continuum image. We perform a
+few rounds of self-calibration to improve the signal to noise in the
+continuum image and then do a continuum subtraction using the task
+UVSUB in AIPS to retain only the \HI~emission in the visibilities for
+further analysis. Figure \ref {fig:fig5} shows the moment0 \HI~map of
+the galaxy NGC~628.
+
+Figure \ref {fig:fig5} shows the estimated $C_{\ell}$ using I-TGE for
+different windows. The left panel shows the measured $C_{\ell}$ when
+we use a BW window with $\theta_b=7.5^{'}$ and $N=4$ (green curve in
+Figure \ref {fig:fig1}). In this case, we aim to measure the
+$C_{\ell}$ due to \HI for the whole region of the galaxy. The lower
+range of $\ell$ will be affected by the convolution with the effective
+primary beam (for details Figure 3 in \citet{samir14}). At large
+multipoles, the \HI~signal falls very rapidly, and the $C_{\ell}$
+estimated in this region is mainly noise dominated. We identify a
+region in the $\ell$-space which we expect to be dominated by the
+galactic \HI~ and fit a power law to the measured $C_{\ell}$. The
+$\ell$ range which we have used for fitting is
+$6\times10^3\le\ell\le6\times10^4$. The best fit value of the power
+law index is $\beta=1.8\pm0.1$. The measured $\beta$ is roughly
+consistent with earlier measurement by \citet{dutta13na} where they
+got $\beta=1.6\pm0.1$. As discussed in \citet{dutta13na}, we can
+interpret the power-law nature of the $C_{\ell}$ is due to the
+two-dimensional ISM turbulence in the plane of galaxy's disk. The
+middle panel of this figure shows the $C_{\ell}$ estimated using a BW
+with smaller HWHM $\theta_b=3.5^{'}$ and $N=4$. Here, we want to
+measure the $C_{\ell}$ from the inner region of the galaxy. We fit a
+power law to the measured $C_{\ell}$ within the same $\ell$ range
+mentioned above. In this case the best fit value of the power law
+index is $\beta=1.7\pm0.1$. The right panel shows the same but for an
+annulus window with inner radius $3.5^{'}$ and outer radius
+$7.5^{'}$. Here, we aim to measure the fluctuations only from the
+outer region of the galaxy. The best fit value of the power law index
+is $\beta=1.89\pm0.1$. We did not see any significant difference in
+the value of $\beta$ for the different region in this galaxy. We may
+conclude that the power law index does not have any dependence on the
+star formation rate within the galaxy. \citet{dutta13na} also found no
+correlation between the power law index and star formation rate for
+$18$ THINGS galaxies.
+
+
+\section{Summary and conclusions}
+\label{summ}
+Statistical measurement in terms of power spectrum is an important
+task in low-frequency radio interferometric observations. Earlier, we
+have developed a visibility based Tapered Gridded Estimator (TGE) for
+this purpose. The main features of this estimator are (a) it uses the
+visibilities after gridding in ``uv'' plane to reduce the computation,
+(b) it suppresses the contribution of strong sources located at the
+outer edge of the primary beam, and (c) it calculates the noise bias
+internally and subtracts this out to give an unbiased estimate of the
+power spectrum. In this paper, we transform the visibility-based TGE
+into the image-based TGE where the tapering is implemented in image
+plane through multiplication. Earlier in visibility-based approach, we
+apply the tapering in Fourier plane through the convolution. The main
+advantage in the image plane is that we can use any taper window for
+suppression although the analytical expression for its Fourier
+transform is not known. Also, for small taper window function, the
+correlation length in visibility plane will be large, and it will take
+huge computation time to convolve all the visibilities in Fourier
+plane. In that case, the image-based approach will be much easier to
+apply the tapering during angular power spectrum estimation. The
+image-based technique can also be applied to quantify the statistical
+properties of a particular region of a galaxy (e.g. star-forming
+region) and to mask a portion around strong sources in a radio image
+which is affected by deconvolution errors. In this paper, we present
+the mathematical formalism of this image-based TGE and validate this
+using realistic simulations.
+
+We validate the estimator using different taper windows
+(e.g. Gaussian, Butterworth, Annulus and Mask windows). To simulate
+the visibilities, we use realistic antenna distribution of VLA array
+at $1.4{\rm GHz}$. We see that for all cases, except for the sharp
+cutoff window, we are able to recover the model angular power spectrum
+quite accurately. We see that the fractional deviation is less than
+$10$ percent for $\ell\ge10^3$. But for the BW window with $N=256$
+(Figure \ref {fig:fig1}), we see that there is a large deviation
+between the estimated and model $C_{\ell}$. In this case, the sharp
+cutoff in the image plane will create oscillations in the Fourier
+plane. We expect the large deviation as compared to model is due to
+this abrupt change of the window function at higher values of $N$. The
+annulus window introduced here can be used to measure the statistical
+properties only from the region we are interested in
+(e.g. star-forming region in a galaxy). The mask window can be used to
+avoid a corrupted region in the radio image caused by the
+deconvolution error around strong sources.
+
+We apply the I-TGE to the real galaxy NGC~628 data taken from THINGS
+survey. We estimate the angular power spectrum $C_{\ell}$ at
+different parts of this galaxy using different windows (e.g. inner,
+outer and whole region of the galaxy). We identify a region in $\ell$
+space which is likely to be dominated by the galactic
+\HI~$(6\times10^3\le\ell\le6\times10^4)$. For all cases, we fit a
+power law to the measured $C_{\ell}$ and found the almost same value
+of the power law index $(\beta)$. The values we get for $\beta$ is in
+the range $1.7-1.9$. This value of $\beta$ is consistent with earlier
+measurement. We can interpret this result as fluctuations due to
+two-dimensional turbulence in the galaxy plane. The similar values of
+the $\beta$ at different parts of the galaxy signify that there is no
+direct correlation between the $\beta$ values and the star-formation
+of this galaxy. We plan to study more number of galaxies to give some
+conclusion in this regard.
+
+The I-TGE allows us to select any particular region in the image for
+the angular power spectrum estimation $C_{\ell}$. However, it is
+necessary to note that for a smaller window, the correlation length in
+Fourier plane will be large and the Fourier mode at different bin will
+be correlated. As a result, the covariance between the different bins
+will be non-zero. In this paper, we only consider the variance at a
+particular bin assuming different bins are independent. We plan to
+study the covariance in future. Here, we only consider the angular
+power spectrum which measures the fluctuations only in the
+two-dimensional sky plane. It is also necessary to measure the
+fluctuations along the line of sight in order to quantify the
+cosmological $21-{\rm cm}$ signal. We plan to extend this formalism in
+three dimensions to measure the power s
+Your text goes here...
+
+% Uncomment the following two lines if you want to have a bibliography
+%\bibliographystyle{alpha}
+%\bibliography{document}
+
+\end{document}

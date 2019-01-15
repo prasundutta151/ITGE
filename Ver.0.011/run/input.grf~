@@ -1,0 +1,8 @@
+-850	1024	0.025 :	SEED(I)		N(I)		L(D)[arc min]
+1.417264e9 0.e3 1. 151  :	nu0(D)[Hz]	dnu(D)[Hz]	ch0(D}		NChan[I}
+20 18.0	   	      :	NB(D)  		theta0(D)[amin]			
+0. 0.0 		      : Spindx(D)	delSpindx(D)			
+3.e5 -1.88	      :	A_150(D)	betav(D)
+psnobeamunity.dat     :
+psbeamunity.dat       :
+

@@ -1,0 +1,7 @@
+/Users/prasun/Dropbox/ITGE/Ver.0.011/				: Location
+proj/NGC6946			: PROJDIR
+NGC6946_UVSUB.FITS		: VISF
+NGC6946_MASK.fits		: MASKF
+Norm.FITS			: NORMF
+Pow.dat				: POWF
+

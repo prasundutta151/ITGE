@@ -1,0 +1,2 @@
+80.		50.e3	: Umin(D)[lam]	Umax(D)[lam]
+20 		1.e-10	: NBin(I)	cutoff(D)
